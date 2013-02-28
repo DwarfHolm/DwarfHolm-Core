@@ -1,0 +1,36 @@
+name: ${project.name}
+version: ${project.version}
+website: ${project.url}
+description: ${project.name} libraries for DwarfHolm plugins.
+author: Braizhauler
+
+main: ${main.class}
+depend: [Vault]
+database: true
+
+commands:
+   dhversion:
+      description: Displays version numbers for all loaded DwarfHolm plugins.
+      permissions: dh.core.version
+      usage: /<command>
+   dhreload: 
+      description: Displays version numbers for all loaded DwarfHolm plugins.
+      permissions: dh.core.reload
+      usage: /<command>
+
+permissions:
+   dh.core.*:
+      description: Use of all DwarfHolm-Core functions
+      children:
+         dh.core.reload: true
+         dh.core.version: true
+   dh.core.admin:
+      description: Use of all DwarfHolm-Core admin functions
+      children:
+         dh.core.reload: true
+   dh.core.version:
+      description: Allows you to see all DwarfHolm plugins versions
+      default: true
+   dh.core.reload:
+      description: Allows you to use reload all DwarfHolm plugins
+      default: op

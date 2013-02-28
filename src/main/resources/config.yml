@@ -1,0 +1,5 @@
+locale:
+   filename: "enUS.yml"
+data:
+   #datastore may be "database" or "yaml"
+   datastorage: database
