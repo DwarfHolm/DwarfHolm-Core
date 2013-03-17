@@ -1,20 +1,32 @@
-package com.dwarfholm.DHcore.data;
+package com.dwarfholm.DHcore.data.YAML;
 
+import java.io.File;
+
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
 import com.dwarfholm.DHcore.DHcore;
+import com.dwarfholm.DHcore.data.DHDataException;
+import com.dwarfholm.DHcore.data.DHDataStore;
+import com.dwarfholm.DHcore.data.DHcorePlayer;
 
-public class DHcoreFlatFile implements DHDataStore {
+public class DHcoreYaml implements DHDataStore {
 	@SuppressWarnings("unused")
 	private DHcore plugin;
+	private String filename = "playerdata.yml";
+	private YamlConfiguration yamlconfig;
+	private File playerdata;
+	private DHcorePlayerYaml playerYaml;
 	
-	public DHcoreFlatFile(DHcore parent)	{
+	public DHcoreYaml(DHcore parent)	{
 		plugin = parent;
+		playerdata = new File(plugin.getDataFolder(), filename);
 	}
 	
 	@Override
 	public void initialize() throws DHDataException{
-		// TODO Auto-generated method stub
+		YamlConfiguration yaml = new YamlConfiguration();
+		playerYaml = new DHcorePlayerYaml(playerdata, yaml);
 	}
 	
 	@Override

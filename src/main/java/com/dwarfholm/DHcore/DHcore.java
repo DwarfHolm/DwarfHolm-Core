@@ -10,11 +10,11 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.dwarfholm.DHcore.data.DHDataStore;
-import com.dwarfholm.DHcore.data.DHcoreDatabase;
-import com.dwarfholm.DHcore.data.DHcoreFlatFile;
 import com.dwarfholm.DHcore.data.DHcoreLookupList;
-import com.dwarfholm.DHcore.data.DHcorePlayer;
 import com.dwarfholm.DHcore.data.DHcorePlayerList;
+import com.dwarfholm.DHcore.data.DHcorePlayer;
+import com.dwarfholm.DHcore.data.YAML.DHcoreYaml;
+import com.dwarfholm.DHcore.data.database.DHcoreDatabase;
 import com.dwarfholm.DHcore.listeners.DHPlayerListener;
 
 public class DHcore extends JavaPlugin {
@@ -41,7 +41,7 @@ public class DHcore extends JavaPlugin {
 		//create data storage
 		if("flatfile".equalsIgnoreCase(config.getString("datastore"))) {
 			// flat-file persistence
-			dataStorage = new DHcoreFlatFile(this);
+			dataStorage = new DHcoreYaml(this);
 		}else{
 			// database persistence
 			dataStorage = new DHcoreDatabase(this);

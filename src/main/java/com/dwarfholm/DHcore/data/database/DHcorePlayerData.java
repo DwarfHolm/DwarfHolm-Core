@@ -1,4 +1,4 @@
-package com.dwarfholm.DHcore.data;
+package com.dwarfholm.DHcore.data.database;
 
 import java.sql.Timestamp;
 import java.util.Date;
@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "DHc_Players")
+@Table(name = "DH_players")
 public class DHcorePlayerData {
 	@Id private int DHID;
 	@Column(name = "name", columnDefinition = "VARCHAR(16)") private String playerName;

@@ -1,4 +1,4 @@
-package com.dwarfholm.DHcore.data;
+package com.dwarfholm.DHcore.data.database;
 
 import java.util.List;
 
@@ -8,6 +8,9 @@ import org.bukkit.entity.Player;
 
 import com.avaje.ebean.Query;
 import com.dwarfholm.DHcore.DHcore;
+import com.dwarfholm.DHcore.data.DHDataException;
+import com.dwarfholm.DHcore.data.DHDataStore;
+import com.dwarfholm.DHcore.data.DHcorePlayer;
 
 public class DHcoreDatabase implements DHDataStore {
 	private final DHcore plugin;
