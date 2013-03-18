@@ -15,7 +15,7 @@ public class DHcorePlayerYaml {
 	public DHcorePlayerYaml(File playerdata, YamlConfiguration yaml) {
 		this.configBase = "players";
 		this.yaml = yaml;
-		this.file = file;
+		this.file = playerdata;
 	}
 
 	
